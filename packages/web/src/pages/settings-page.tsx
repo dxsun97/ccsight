@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 
 export function SettingsPage() {
-  const { dataSources, fetchConfig, saveConfig, fetchProjects } =
+  const {  fetchConfig, saveConfig, fetchProjects } =
     useSessionStore()
   const [sources, setSources] = useState<DataSource[]>([])
   const [isAdding, setIsAdding] = useState(false)
@@ -15,12 +15,10 @@ export function SettingsPage() {
   const [saved, setSaved] = useState(false)
 
   useEffect(() => {
-    fetchConfig()
+    fetchConfig().then(() => {
+      setSources(useSessionStore.getState().dataSources)
+    })
   }, [fetchConfig])
-
-  useEffect(() => {
-    setSources(dataSources)
-  }, [dataSources])
 
   const handleSave = async () => {
     await saveConfig(sources)
