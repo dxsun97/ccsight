@@ -9,8 +9,7 @@ interface SettingsPanelProps {
 }
 
 export function SettingsPanel({ onClose }: SettingsPanelProps) {
-  const { fetchConfig, saveConfig, fetchProjects } =
-    useSessionStore()
+  const { fetchConfig, saveConfig, fetchProjects } = useSessionStore()
   const [sources, setSources] = useState<DataSource[]>([])
   const [isAdding, setIsAdding] = useState(false)
   const [newLabel, setNewLabel] = useState('')
