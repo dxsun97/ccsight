@@ -6,8 +6,7 @@ import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 
 export function SettingsPage() {
-  const {  fetchConfig, saveConfig, fetchProjects } =
-    useSessionStore()
+  const { fetchConfig, saveConfig, fetchProjects } = useSessionStore()
   const [sources, setSources] = useState<DataSource[]>([])
   const [isAdding, setIsAdding] = useState(false)
   const [newLabel, setNewLabel] = useState('')
