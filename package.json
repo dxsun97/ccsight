@@ -1,5 +1,5 @@
 {
-  "name": "ccflow",
+  "name": "cc-flow",
   "version": "0.1.0",
   "description": "Dashboard for visualizing Claude Code session data",
   "type": "module",
